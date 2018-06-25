@@ -4,10 +4,11 @@ const axios = require('axios');
 service.getQuestion = function(questionText) {
     return axios
         .get('https://api.stackexchange.com/2.2/search/advanced?order=desc&sort=relevance&q=' +
-            escape(questionText) + '&site=stackoverflow&accepted=true')
+            encodeURIComponent(questionText) + '&site=stackoverflow&accepted=true')
         .then(function(res) {
             // Keep only three first question objects that are answered ( is_asnwered = true)
             const questions = res.data.items.filter(item => item.is_answered).slice(0, 3);
+            if (!questions.length) return Promise.all([[], []]);
             // Save question id's in a string separated by semicolon
             const ids = questions.map(item => item.question_id).join(';');
             return Promise.all([
