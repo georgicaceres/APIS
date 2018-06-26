@@ -2,7 +2,7 @@ extends layout
 
 block content
 	p La Web Api de Slack permite solicitar información y realizar modificaciones dentro de un espacio de trabajo de Slack. Ofrece una serie de comandos (métodos) a los que se puede acceder por post o get según corresponda, cada uno de los cuales tiene una ruta propia a la cual hacer la solicitud. Dichas rutas se estructuran del siguiente modo:
-	h3 https://slack.com/api/{nombre del método}
+	h3 https://slack.com/api/{familia del método.nombre del método}
 	h2 Para demostrar cómo funciona la api, haremos alguna pruebas
 	a(href="/prueba") Primero, vamos a probar la API (y verificar que nuestra solicitud funcione) a través del método api.test (url: https://slack.com/api/api.test). Este método no requiere autenticación.
 	a(href="/error") Ahora, veremos la respuesta que recibimos cuando la solicitud contiene un error. En este caso, trataremos de realizar una solicitud que requiere verificación sin enviar el token correspondiente.
