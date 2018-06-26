@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 /* GET slash command. */
-router.get('/', function(req, res, next) {
+router.post('/', function(req, res, next) {
 
     // Create an array of strings with image url's
     let images = [

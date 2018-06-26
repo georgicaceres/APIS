@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var axios = require('axios');
-var token = ""
+var token = "acá debería haber un token. Ver instrucciones adjuntas para generar un token de prueba =)"
 
 /*HOME*/
 router.get('/', function(req,res,next){
