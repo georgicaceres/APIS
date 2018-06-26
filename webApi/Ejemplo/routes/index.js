@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var axios = require('axios');
-var token = "acá debería haber un token, pero por razones de seguridad no lo hay. Ver en el repo instrucciones para generar uno"
+var token = ""
 
 /*HOME*/
 router.get('/', function(req,res,next){
@@ -55,6 +55,7 @@ router.get('/lista', function(req, res, next) {
   .then(function (response) {
      //del objeto respuesta, me quedo con los datos
      var data = response.data 
+     console.log(data)
      //parámetro ok que determina si el requerimiento funcionó correctamente
      var ok = JSON.stringify(data.ok);
      //información que me trae (en este caso, los miembros del grupo)
